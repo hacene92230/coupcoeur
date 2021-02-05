@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un nouveau bien{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau Bien</h1>
+    <a href="{{ path('home') }}">retour à l'accueil</a>
+    {{ include('bien/_form.html.twig') }}
+{% endblock %}

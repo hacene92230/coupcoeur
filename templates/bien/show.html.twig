@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bien{% endblock %}
+
+{% block body %}
+    <h1>Bien</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bien.id }}</td>
+            </tr>
+            <tr>
+                <th>Chauffage</th>
+                <td>{{ bien.chauffage }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ bien.surface }}</td>
+            </tr>
+            <tr>
+                <th>Pieces</th>
+                <td>{{ bien.pieces }}</td>
+            </tr>
+            <tr>
+                <th>Chambres</th>
+                <td>{{ bien.chambres }}</td>
+            </tr>
+            <tr>
+                <th>Etages</th>
+                <td>{{ bien.etages }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ bien.prix }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ bien.ville }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ bien.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Code_postal</th>
+                <td>{{ bien.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Disponible</th>
+                <td>{{ bien.disponible ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ bien.createdAt ? bien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ bien.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bien_index') }}">back to list</a>
+
+    <a href="{{ path('bien_edit', {'id': bien.id}) }}">edit</a>
+
+    {{ include('bien/_delete_form.html.twig') }}
+{% endblock %}
